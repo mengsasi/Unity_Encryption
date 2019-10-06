@@ -12,7 +12,7 @@ public class AES {
     /// </summary>
     private static string Key {
         get {
-            return "abcdef1234567890";    ////必须是16位
+            return "abcdef1234567890";    //必须是16位
         }
     }
 
