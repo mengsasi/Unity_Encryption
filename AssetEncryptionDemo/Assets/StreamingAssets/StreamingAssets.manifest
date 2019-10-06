@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 4111467121
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets/cube.ab
+      Dependencies: {}
