@@ -1,6 +1,9 @@
 # Unity_Encryption
 Unity 加密
 
+### AssetEncryptionDemo
+Unity资源AssetBundle加密
+
 ### AssemblyEncryptionDemo
 Unity2018.3.5
 
