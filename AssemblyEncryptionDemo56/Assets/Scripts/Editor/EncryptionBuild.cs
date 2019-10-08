@@ -32,7 +32,7 @@ public class EncryptionBuild {
         //加密
         EncryptAssemblyCSharp( path );
         //替换解密mono.dll
-        ReplaceMonoDll( path, _bt );
+        //ReplaceMonoDll( path, _bt );
 
         int num = path.LastIndexOf( "/" );
         path = path.Substring( 0, num );
@@ -60,7 +60,23 @@ public class EncryptionBuild {
         string mdPath = path.Replace( ".exe", "_Data" ) + "/Mono/mono.dll";
         byte[] readByte = File.ReadAllBytes( Application.dataPath + "/NewMono/" + _bt.ToString() + "/mono.txt" );
         File.WriteAllBytes( mdPath, readByte );
-		Debug.Log( "替换完成" );
+    }
+
+
+    [MenuItem( "Build/加密Android的Assembly-CSharp.dll" )]
+    static void EncryptAndroidAssemblyCSharp() {
+        string root = "E:\\Project\\Unity_Encryption\\Build56";
+        string acsPath = Path.Combine( root, "ACS_before\\Assembly-CSharp.dll" );
+        byte[] readByte = File.ReadAllBytes( acsPath );
+        //加密
+        byte[] newBytes = new byte[readByte.Length + 1];
+        newBytes[0] = 1;
+        for( int i = 1; i < newBytes.Length - 1; i++ ) {
+            newBytes[i] = readByte[i - 1];
+        }
+        acsPath = acsPath.Replace( "before", "after" );
+        File.WriteAllBytes( acsPath, newBytes );
+        Debug.Log( "Android加密完成" );
     }
 
 }

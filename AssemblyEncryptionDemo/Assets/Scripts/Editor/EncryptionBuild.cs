@@ -62,4 +62,21 @@ public class EncryptionBuild {
         File.WriteAllBytes( mdPath, readByte );
     }
 
+
+    [MenuItem( "Build/加密Android的Assembly-CSharp.dll" )]
+    static void EncryptAndroidAssemblyCSharp() {
+        string root = "E:\\Project\\Unity_Encryption\\Build56";
+        string acsPath = Path.Combine( root, "ACS_before\\Assembly-CSharp.dll" );
+        byte[] readByte = File.ReadAllBytes( acsPath );
+        //加密
+        byte[] newBytes = new byte[readByte.Length + 1];
+        newBytes[0] = 1;
+        for( int i = 1; i < newBytes.Length - 1; i++ ) {
+            newBytes[i] = readByte[i - 1];
+        }
+        acsPath = acsPath.Replace( "before", "after" );
+        File.WriteAllBytes( acsPath, newBytes );
+        Debug.Log( "Android加密完成" );
+    }
+
 }
