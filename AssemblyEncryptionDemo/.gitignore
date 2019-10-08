@@ -1,0 +1,14 @@
+/Unity.TextMeshPro.Editor.csproj
+/.vs
+/Library
+/Logs
+/obj
+/Assembly-CSharp.csproj
+/Assembly-CSharp-Editor.csproj
+/AssemblyEncryptionDemo.csproj
+/AssemblyEncryptionDemo.Editor.csproj
+/AssemblyEncryptionDemo.sln
+/Unity.Analytics.DataPrivacy.csproj
+/Unity.CollabProxy.Editor.csproj
+/Unity.PackageManagerUI.Editor.csproj
+/Unity.TextMeshPro.csproj
